@@ -19,7 +19,7 @@ export function Footer() {
           {/* Brand Info */}
           <div className="col-span-2 md:col-span-1">
             <h3 className="text-3xl font-serif font-bold text-accent-gold mb-4">
-              Beyene Geba
+              Beyene Gemede
             </h3>
             <p className="text-sm">
               Premium coffee exporter, rooted in the heritage of Yirgacheffe, Ethiopia.
@@ -47,7 +47,7 @@ export function Footer() {
             <ul className="space-y-3 text-sm">
               <li className="flex items-start">
                 <Mail className="w-5 h-5 mr-3 text-accent-gold flex-shrink-0 mt-1" />
-                <span>export@beyenegeba.com</span>
+                <span>isrucrasus10@gmail.com</span>
               </li>
               <li className="flex items-start">
                 <Phone className="w-5 h-5 mr-3 text-accent-gold flex-shrink-0 mt-1" />
@@ -85,7 +85,7 @@ export function Footer() {
         {/* Copyright */}
         <div className="text-center pt-6">
           <p className="text-xs text-bg-primary/50">
-            &copy; {currentYear} Beyene Geba Exporter. All rights reserved.
+            &copy; {currentYear} Beyene Gemede Exporter. All rights reserved.
           </p>
         </div>
       </div>

@@ -9,7 +9,7 @@ export function HomeCTAs() {
         {/* Partner & Export Info CTA */}
         <div className="bg-bg-dark text-bg-primary p-10 rounded-xl shadow-2xl">
           <h3 className="text-3xl font-serif font-bold mb-4 text-accent-gold">
-            Partner with Beyene Geba
+            Partner with Beyene Gemede
           </h3>
           <p className="text-lg mb-6">
             Are you a global roaster, importer, or distributor? Discover our flexible

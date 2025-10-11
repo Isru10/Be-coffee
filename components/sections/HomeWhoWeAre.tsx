@@ -26,7 +26,7 @@ export function HomeWhoWeAre() {
               Rooted in the Soil of Yirgacheffe.
             </h3>
             <p className="text-xl leading-relaxed mb-8 text-text-dark/80">
-              Beyene Geba is more than an exporter; we are custodians of the
+              Beyene Gemede is more than an exporter; we are custodians of the
               ancient Ethiopian coffee tradition. Based in the legendary region of Yirgacheffe,
               our work is a dedication to quality, sustainability, and the over 300 families
               who passionately cultivate these world-renowned beans.

@@ -19,7 +19,7 @@ export function AboutStory() {
               Our Founding History
             </h2>
             <p className="text-lg leading-relaxed mb-6 text-text-dark/80">
-              The Beyene Geba story begins generations ago in the heart of Yirgacheffe,
+              The Beyene Gemede story begins generations ago in the heart of Yirgacheffe,
               the birthplace of coffee. Our family knowledge of cultivation, processing,
               and trade is a meticulously passed-down heritage, combining ancient techniques
               with modern, sustainable practices.

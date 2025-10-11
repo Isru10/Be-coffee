@@ -3,6 +3,7 @@ import type { Config } from 'tailwindcss';
 
 const config: Config = {
   // Ensure content points to all components and pages
+  darkMode: 'class', 
   content: [
     './app/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -17,6 +18,9 @@ const config: Config = {
         'text-dark': '#302C23',  // Dark Earthy Brown (WCAG friendly contrast)
         'accent-gold': '#A3885C', // Subtle Gold Accent (Elegant touch)
         'accent-green': '#5A7758', // Earthy Green Accent (Sustainability/Coffee)
+        'dm-bg': '#1C1C1C',
+        'dm-text': '#F9F7F0',
+
       },
       // Custom Typography: Modern serif + sans combo
       fontFamily: {

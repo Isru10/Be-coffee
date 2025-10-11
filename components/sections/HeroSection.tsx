@@ -35,7 +35,7 @@ export function HeroSection() {
           // Large, bold serif font with the accent color
           className="text-7xl md:text-9xl font-serif font-extrabold tracking-tight mb-4 text-accent-gold drop-shadow-lg"
         >
-          Beyene Geba
+          Beyene Gemede
         </MotionDiv>
 
         {/* Tagline */}
