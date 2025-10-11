@@ -4,10 +4,8 @@ import { COFFEE_LOTS, CoffeeLot } from '@/data/coffee-lots';
 import { PageHeader } from '@/components/layout/PageHeader';
 import { CoffeeDetailSection } from '@/components/products/CoffeeDetailSection';
 
-
 // --- Server Side Functions ---
 
-// Required for dynamic segments in Next.js App Router (Static Site Generation)
 export async function generateStaticParams() {
   return COFFEE_LOTS.map((lot) => ({
     lotId: lot.id,
@@ -18,18 +16,19 @@ export async function generateStaticParams() {
 function getCoffeeLot(lotId: string): CoffeeLot | undefined {
   return COFFEE_LOTS.find(lot => lot.id === lotId);
 }
+
 // -----------------------------
 
+interface CoffeeDetailPageProps {
+  params: Promise<{ lotId: string }>; // ✅ Next.js 15 expects params as Promise
+}
 
-export default function CoffeeDetailPage({ 
-  params 
-}: { 
-  params: { lotId: string } 
-}) {
-  const lot = getCoffeeLot(params.lotId);
+export default async function CoffeeDetailPage({ params }: CoffeeDetailPageProps) {
+  const { lotId } = await params; // ✅ await params
+  const lot = getCoffeeLot(lotId);
 
   if (!lot) {
-    notFound(); // Display the Next.js not-found page if lotId is invalid
+    notFound(); // Display 404 if lotId is invalid
   }
 
   return (
@@ -39,9 +38,7 @@ export default function CoffeeDetailPage({
         tagline={`${lot.region} - ${lot.process} Process`}
       />
       
-      {/* Detail Section Component */}
       <CoffeeDetailSection lot={lot} />
-      
     </main>
   );
 }
