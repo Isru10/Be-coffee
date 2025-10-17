@@ -40,10 +40,10 @@ function AnimatedCounter({ to, suffix = '', duration = 2000 }: AnimatedCounterPr
 
 
 const impactData = [
-  { label: 'Farmers Supported', value: 300, suffix: '+' },
+  { label: 'Farmers Supported', value: 30, suffix: '+' },
   { label: 'Years of Experience', value: 20, suffix: '+' },
   { label: 'Lots Exported Annually', value: 50, suffix: '+' },
-  { label: 'Regions of Origin', value: 3 },
+  { label: 'Regions of Origin', value: 2 },
 ];
 
 export function HomeImpact() {

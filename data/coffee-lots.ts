@@ -18,7 +18,7 @@ export interface CoffeeLot {
   };
 }
 
-// Mock Data for Beyene Geba Exporter
+// Mock Data for Beyene Gemede Exporter
 export const COFFEE_LOTS: CoffeeLot[] = [
   {
     id: 'yg1w24',
@@ -28,7 +28,7 @@ export const COFFEE_LOTS: CoffeeLot[] = [
     altitude: '1,900 – 2,100 masl',
     flavorNotes: ['Bergamot', 'Jasmine', 'Lemon Zest'],
     exportReadiness: 'Ready',
-    imagePlaceholder: 'washed.jpg',
+    imagePlaceholder: '/images/c3.jpg',
     details: {
         origin: 'Kochere District, Yirgacheffe',
         variety: 'Ethiopian Heirloom',
@@ -44,7 +44,7 @@ export const COFFEE_LOTS: CoffeeLot[] = [
     altitude: '1,850 – 2,050 masl',
     flavorNotes: ['Blueberry', 'Red Wine', 'Dark Chocolate'],
     exportReadiness: 'Ready',
-    imagePlaceholder: 'natural.jpg',
+    imagePlaceholder: '/images/c2.jpg',
     details: {
         origin: 'Aricha Woreda, Yirgacheffe',
         variety: 'Ethiopian Heirloom',
@@ -52,36 +52,7 @@ export const COFFEE_LOTS: CoffeeLot[] = [
         export: 'Available for immediate booking and shipment.'
     }
   },
-  {
-    id: 'sidama24',
-    name: 'Sidama Bensa Grade 2 Washed',
-    region: 'Sidama Bensa',
-    process: 'Washed',
-    altitude: '2,000 – 2,200 masl',
-    flavorNotes: ['Stone Fruit', 'Caramel', 'Sweet Tea'],
-    exportReadiness: 'Seasonal',
-    imagePlaceholder: 'sidama.jpg',
-    details: {
-        origin: 'Bensa District, Sidama',
-        variety: 'Ethiopian Heirloom',
-        tastingNotes: 'A beautifully balanced and sweet cup with high clarity and a lingering aftertaste.',
-        export: 'Pre-booking advised. Available in 3 months.'
-    }
-  },
-  {
-    id: 'guji24',
-    name: 'Guji Special Prep Natural',
-    region: 'Guji Shakiso',
-    process: 'Specialty',
-    altitude: '1,950 – 2,150 masl',
-    flavorNotes: ['Tropical Fruit', 'Rum', 'Cacao Nibs'],
-    exportReadiness: 'Sold Out',
-    imagePlaceholder: 'guji.jpg',
-    details: {
-        origin: 'Shakiso District, Guji',
-        variety: 'Ethiopian Heirloom',
-        tastingNotes: 'An intensely rich and exotic cup, selected as a competition micro-lot. Limited availability.',
-        export: 'Next harvest in 8 months. Contact for future contract.'
-    }
-  }
+  
+  
+
 ];

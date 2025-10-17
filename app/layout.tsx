@@ -5,7 +5,8 @@ import type { Metadata } from 'next';
 // Import the required Google Fonts
 import { Inter, Playfair_Display } from 'next/font/google'; 
 import { Footer } from '@/components/layout/Footer';
-import { ThemeProvider } from '@/components/context/ThemeProvider';
+
+
 // Remove the Geist imports (Geist, Geist_Mono)
 
 // Load Fonts and define CSS variables as per Step 1 & 2 requirements
@@ -37,8 +38,10 @@ export default function RootLayout({
 }>) {
   return (
         <html lang="en" className={`${inter.variable} ${playfair.variable}`}> 
-      {/* WRAP body content with ThemeProvider */}
-      <ThemeProvider> 
+      
+      
+      
+      
         <body className="bg-bg-primary text-text-dark font-sans antialiased 
                          dark:bg-dm-bg dark:text-dm-text transition-colors"> {/* Add dark mode base classes */}
           <Header /> 
@@ -47,7 +50,8 @@ export default function RootLayout({
           </main>
           <Footer /> 
         </body>
-      </ThemeProvider>
+      
+      
     </html>
 
     

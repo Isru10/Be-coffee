@@ -1,8 +1,9 @@
-// components/products/CoffeeCard.tsx (Client Component - for Framer Motion)
+// components/products/CoffeeCard.tsx
 'use client';
 import { MotionDiv } from '../motion/MotionProvider';
 import { CoffeeLot } from '@/data/coffee-lots'; // Assuming the data file is correct
-import { MapPin, Mountain, Leaf } from 'lucide-react';
+import { MapPin, Mountain } from 'lucide-react'; // Leaf removed as it was unused
+import Image from 'next/image';
 import Link from 'next/link';
 
 interface CoffeeCardProps {
@@ -28,9 +29,17 @@ export function CoffeeCard({ lot }: CoffeeCardProps) {
         transition={{ duration: 0.5 }}
         className="bg-bg-primary shadow-xl rounded-xl overflow-hidden flex flex-col hover:shadow-2xl transition-shadow duration-300 border-t-4 border-accent-gold/50"
     >
-        {/* Image Placeholder */}
-        <div className="w-full h-48 bg-text-dark/10 flex items-center justify-center text-xl font-serif text-text-dark/50">
-            [Image: {lot.imagePlaceholder.split('.')[0]}]
+        {/* Image Container: MUST be relative and have fixed dimensions (h-48) */}
+        <div className="relative w-full h-48 bg-text-dark/10"> 
+            <Image
+                src={lot.imagePlaceholder} 
+                alt={`Image of ${lot.name}`}
+                fill 
+                sizes="(max-width: 768px) 100vw, 33vw" // Recommended for fill prop
+                style={{ objectFit: 'cover' }} // Use style prop for object-fit
+                className='transition-transform duration-300 hover:scale-[1.03]' // Custom classes for image effects
+                unoptimized={process.env.NODE_ENV === 'development'}
+            />
         </div>
 
         <div className="p-6 flex flex-col flex-grow">
@@ -74,7 +83,7 @@ export function CoffeeCard({ lot }: CoffeeCardProps) {
             {/* View Details CTA */}
             <div className='mt-auto pt-4'>
                 <Link
-                    href={`/coffee/${lot.id}`} // Link to the detail page (Step 9)
+                    href={`/coffee/${lot.id}`}
                     className="inline-block w-full text-center px-6 py-3 border-2 border-text-dark text-text-dark font-bold hover:bg-text-dark hover:text-bg-primary transition-colors"
                 >
                     View Details

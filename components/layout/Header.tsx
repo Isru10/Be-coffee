@@ -4,7 +4,8 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
 import { MotionDiv } from '../motion/MotionProvider';
-import { DarkModeToggle } from '../context/ThemeProvider';
+
+
 
 
 const navItems = [
@@ -59,13 +60,14 @@ export function Header() {
             ))}
             
             {/* Dark Mode Toggle on Desktop */}
-            <DarkModeToggle /> 
+            {/* <DarkModeToggle />  */}
           </nav>
 
           {/* Mobile Menu Button & Toggle (Combined) */}
           <div className="-mr-2 flex items-center md:hidden space-x-3">
              {/* Dark Mode Toggle on Mobile */}
-             <DarkModeToggle /> 
+             
+             
 
             <button
               type="button"

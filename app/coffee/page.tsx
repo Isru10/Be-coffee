@@ -17,14 +17,14 @@ export default function OurCoffeePage() {
         </h2>
 
         {/* Optional Filter/Sort Placeholder (Nice-to-Have) */}
-        <div className="flex justify-end mb-10">
+      {/* <div className="flex justify-end mb-10">
             <select className="p-2 border border-text-dark/20 rounded-md font-sans text-sm bg-bg-primary/80">
                 <option value="all">Filter by Process (All)</option>
                 <option value="washed">Washed</option>
                 <option value="natural">Natural</option>
                 <option value="specialty">Specialty</option>
             </select>
-        </div>
+        </div> */}
 
         {/* Responsive Grid of Coffee Cards */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">

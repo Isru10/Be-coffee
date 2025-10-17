@@ -1,5 +1,6 @@
 // components/sections/AboutStory.tsx (Client Component - for Framer Motion)
 'use client';
+import Image from 'next/image';
 import { MotionDiv } from '../motion/MotionProvider';
 
 export function AboutStory() {
@@ -46,7 +47,7 @@ export function AboutStory() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="w-full h-96 rounded-lg overflow-hidden shadow-xl bg-accent-gold/20 flex items-center justify-center font-serif text-lg text-text-dark/70"
           >
-            [Placeholder: Heritage Image / Map of Yirgacheffe]
+            <Image  width={200} height={200} src={'/images/c5.jpg'} className='w-full h-full rounded-2xl' alt="Founders/Farm" />
           </MotionDiv>
         </div>
       </div>

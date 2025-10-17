@@ -1,9 +1,10 @@
-// components/products/CoffeeDetailSection.tsx (Client Component - for Framer Motion)
+// components/products/CoffeeDetailSection.tsx (UPDATED for Dynamic Next/Image)
 'use client';
 import { MotionDiv } from '../motion/MotionProvider';
 import { CoffeeLot } from '@/data/coffee-lots';
 import Link from 'next/link';
 import { MapPin, Mountain, Sun, Star, Leaf } from 'lucide-react';
+import Image from 'next/image'; // <-- NEW IMPORT
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 interface CoffeeDetailSectionProps {
@@ -12,6 +13,7 @@ interface CoffeeDetailSectionProps {
 
 export function CoffeeDetailSection({ lot }: CoffeeDetailSectionProps) {
     
+    // ... (getProcessIcon and ProcessIcon remain) ...
     const getProcessIcon = (process: CoffeeLot['process']) => {
         switch (process) {
             case 'Washed': return { icon: Star, color: 'text-accent-gold' };
@@ -23,27 +25,37 @@ export function CoffeeDetailSection({ lot }: CoffeeDetailSectionProps) {
     
     const ProcessIcon = getProcessIcon(lot.process).icon;
 
+
     return (
         <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
             <div className="grid md:grid-cols-12 gap-12">
                 
-                {/* Large Image (Col 1-7) */}
+                {/* Large Image (Col 1-7) - REPLACING PLACEHOLDER DIV */}
                 <MotionDiv
                     initial={{ opacity: 0, x: -50 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8 }}
-                    className="md:col-span-7 w-full h-[500px] rounded-xl overflow-hidden shadow-2xl bg-text-dark/10 flex items-center justify-center text-2xl font-serif text-text-dark/50"
+                    className="md:col-span-7 w-full h-[500px] rounded-xl overflow-hidden shadow-2xl bg-text-dark/10 relative" // ADDED relative
                 >
-                    [Large Image: {lot.imagePlaceholder}]
+                    <Image
+                        src={lot.imagePlaceholder} 
+                        alt={`Image of ${lot.name}`}
+                        fill 
+                        priority // Load this main image eagerly
+                        sizes="(max-width: 1024px) 100vw, 58vw" // Appropriate size for a larger image
+                        style={{ objectFit: 'cover' }}
+                        className='transition-transform duration-300'
+                        unoptimized={process.env.NODE_ENV === 'development'}
+                    />
                 </MotionDiv>
 
                 {/* Details & CTA (Col 8-12) */}
                 <MotionDiv
-                    initial={{ opacity: 0, x: 50 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.8, delay: 0.2 }}
+                    // ... (animations remain) ...
                     className="md:col-span-5"
                 >
+                    {/* ... (Rest of the component remains the same) ... */}
+                    
                     <h2 className="text-sm font-sans font-semibold uppercase tracking-widest text-accent-gold mb-3">
                         Technical Specifications
                     </h2>
@@ -81,7 +93,7 @@ export function CoffeeDetailSection({ lot }: CoffeeDetailSectionProps) {
 
                     {/* CTA Button */}
                     <Link
-                        href="/contact?lotId=lot.id" // Pass lotId to Contact Form
+                        href="/contact?lotId=lot.id" 
                         className="inline-block w-full text-center px-8 py-4 text-xl font-bold bg-accent-gold text-bg-dark hover:bg-text-dark hover:text-bg-primary transition-colors shadow-lg"
                     >
                         Request Sample / Export Quote
@@ -93,7 +105,7 @@ export function CoffeeDetailSection({ lot }: CoffeeDetailSectionProps) {
     );
 }
 
-// Helper Component for Specifications
+// Helper Component for Specifications (remains the same)
 function SpecItem({ icon: Icon, label, value }: { icon: any, label: string, value: string }) {
     return (
         <div className='flex items-center justify-between'>

@@ -1,65 +1,107 @@
-// components/sections/HeroSection.tsx (Client Component - due to Framer Motion)
+
+// components/sections/HeroSection.tsx (FINAL ELEGANT EDITORIAL OVERLAY DESIGN)
 'use client';
 import { MotionDiv } from '../motion/MotionProvider';
-// Assuming 'lucide-react' is installed for the icon
-import { ChevronDown } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
+import Image from 'next/image';
+import { AnimatePresence } from 'framer-motion';
+import { useState, useEffect } from 'react';
+import Link from 'next/link';
+
+// Define multiple placeholder images
+const HERO_IMAGE_URLS = [
+    '/images/c1.jpg', 
+    '/images/c2.jpg', 
+    '/images/c3.jpg', 
+    '/images/c4.jpg', 
+];
 
 export function HeroSection() {
+  // Image rotation logic remains the same
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+        setCurrentImageIndex(prevIndex => (prevIndex + 1) % HERO_IMAGE_URLS.length);
+    }, 8000); 
+    return () => clearInterval(timer);
+  }, []);
+  
+  const currentImage = HERO_IMAGE_URLS[currentImageIndex];
+
+
   return (
-    // Full-width section that takes up most of the viewport height (90vh)
-    <section className="relative h-[90vh] flex items-center justify-center text-bg-primary overflow-hidden">
+    // Full screen height container
+    <section className="relative h-[90vh] flex items-end overflow-hidden">
       
-      {/* Background Visuals (Placeholder) 
-          This should be replaced with a high-res Next/Image or video. 
-          The styles simulate a dark, premium visual background. */}
-      <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ 
-              backgroundImage: "url('/images/yirgacheffe-farm-placeholder.jpg')", 
-              // Example filter/brightness to ensure text contrast
-              filter: "brightness(0.6)" 
-          }}
-      >
-        {/* Dark overlay for extra contrast and polish */}
-        <div className="absolute inset-0 bg-bg-dark opacity-20"></div>
+      {/* 1. BACKGROUND IMAGE FADER (Full Width/Height) */}
+      <div className="absolute inset-0 w-full h-full z-0">
+        <AnimatePresence initial={false} mode="wait">
+          <MotionDiv
+            key={currentImage} 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1.5, ease: "easeInOut" }}
+            className='absolute inset-0'
+          >
+            <Image
+                src={currentImage}
+                alt="Rotating background image of Ethiopian coffee"
+                fill
+                priority={currentImageIndex === 0}
+                sizes='100vw'
+                style={{ objectFit: 'cover' }}
+                className='brightness-[0.4] saturate-150' // Dark for high contrast
+                unoptimized={process.env.NODE_ENV === 'development'}
+            />
+          </MotionDiv>
+        </AnimatePresence>
       </div>
-
-      {/* Hero Content (Overlay Text) */}
-      <div className="relative z-10 text-center px-4">
-        
-        {/* Brand Name */}
-        <MotionDiv
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          // Large, bold serif font with the accent color
-          className="text-7xl md:text-9xl font-serif font-extrabold tracking-tight mb-4 text-accent-gold drop-shadow-lg"
-        >
-          Beyene Gemede
-        </MotionDiv>
-
-        {/* Tagline */}
-        <MotionDiv
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
-          // Subtle, light sans-serif font
-          className="text-xl md:text-3xl font-sans font-light tracking-wider drop-shadow-lg"
-        >
-          From the Heart of Yirgacheffe to the World.
-        </MotionDiv>
-      </div>
-
-      {/* Smooth Fade-in Scroll Indicator */}
-      <MotionDiv
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1.5, delay: 1 }}
-        className="absolute bottom-10 animate-bounce cursor-pointer"
-        aria-label="Scroll down"
+      
+      {/* 2. TEXT AND CTA CONTAINER (Editorial, Bottom-Left Aligned) */}
+      <MotionDiv 
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.5 }}
+        // Positioned in the bottom-left corner with maximum z-index
+        className="relative z-20 w-full lg:w-4/5 xl:w-3/5 
+                   text-bg-primary backdrop-blur-sm 
+                   p-8 md:p-12 lg:p-16"
       >
-        <ChevronDown className="w-8 h-8 text-bg-primary/80" />
+        <div className=" text-white max-w-4xl">
+            
+            {/* BRAND NAME: HUGE AND BOLD */}
+            <h2 className="text-7xl sm:text-8xl md:text-9xl font-serif font-extrabold mb-4 leading-none text-accent-gold drop-shadow-xl">
+                Beyene Geba
+            </h2>
+            
+            {/* SUBTITLE: The Tagline */}
+            <p className="text-3xl font-sans font-light mb-8 text-bg-primary drop-shadow-lg max-w-2xl">
+                From the Heart of Yirgacheffe to the World.
+            </p>
+
+            {/* CTA BUTTON */}
+            <MotionDiv
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.8 }}
+            >
+                <Link
+                    href="/coffee"
+                    className="inline-flex items-center px-10 py-4 text-xl font-bold bg-accent-gold text-bg-dark hover:bg-bg-primary hover:text-accent-gold transition-colors shadow-xl"
+                >
+                    View Current Offerings
+                    <ArrowRight className='w-5 h-5 ml-3' />
+                </Link>
+            </MotionDiv>
+        </div>
       </MotionDiv>
+      
     </section>
   );
 }
+
+
+
+

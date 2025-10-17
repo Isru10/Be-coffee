@@ -5,7 +5,7 @@ export function ContactInfo() {
     const contactDetails = [
         { icon: Mail, label: 'Email', value: 'isrucrasus10@gmail.com', href: 'mailto:isrucrasus10@gmail.com' },
         { icon: Phone, label: 'Phone', value: '+251 9XX XXX XXX', href: 'tel:+2519xxxxxxxx' },
-        { icon: MapPin, label: 'Office Address', value: 'Addis Ababa, Ethiopia, Bole Sub-City', href: '#' },
+        { icon: MapPin, label: 'Office Address', value: 'Addis Ababa, Ethiopia, Bole Sub-City', href: 'https://maps.app.goo.gl/3d15A7NEkhViq4U47' },
     ];
 
     const socialLinks = [
