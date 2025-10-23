@@ -5,8 +5,8 @@ import { MapPin, Phone, Mail, Facebook, Instagram, Linkedin } from 'lucide-react
 
 const socialLinks = [
     { icon: Facebook, href: '#', name: 'Facebook' },
-    { icon: Instagram, href: '#', name: 'Instagram' },
-    { icon: Linkedin, href: '#', name: 'LinkedIn' },
+    { icon: Instagram, href: 'https://www.instagram.com/beyenegemedeexport?utm_source=qr&igsh=dzB6OGExNGoyazY1', name: 'Instagram' },
+    { icon: Linkedin, href: '#', name: 'https://www.linkedin.com/in/israel-solomon-2b756b2b8/' },
 ];
 
 export function Footer() {
@@ -47,11 +47,11 @@ export function Footer() {
             <ul className="space-y-3 text-sm">
               <li className="flex items-start">
                 <Mail className="w-5 h-5 mr-3 text-accent-gold flex-shrink-0 mt-1" />
-                <span>isrucrasus10@gmail.com</span>
+                <span>yodsbusiness@gmail.com</span>
               </li>
               <li className="flex items-start">
                 <Phone className="w-5 h-5 mr-3 text-accent-gold flex-shrink-0 mt-1" />
-                <span>+251 9XX XXX XXX</span>
+                <span>+251 939 82 50 62</span>
               </li>
               <li className="flex items-start">
                 <MapPin className="w-5 h-5 mr-3 text-accent-gold flex-shrink-0 mt-1" />
