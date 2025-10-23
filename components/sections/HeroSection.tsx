@@ -73,7 +73,7 @@ export function HeroSection() {
             
             {/* BRAND NAME: HUGE AND BOLD */}
             <h2 className="text-7xl sm:text-8xl md:text-9xl font-serif font-extrabold mb-4 leading-none text-accent-gold drop-shadow-xl">
-                Beyene Geba
+                Beyene Gemede
             </h2>
             
             {/* SUBTITLE: The Tagline */}
