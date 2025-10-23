@@ -22,31 +22,31 @@ export interface CoffeeLot {
 export const COFFEE_LOTS: CoffeeLot[] = [
   {
     id: 'yg1w24',
-    name: 'Yirgacheffe Grade 1 Washed',
-    region: 'Yirgacheffe Kochere',
+    name: 'Washed Yirgacheffe',
+    region: 'Gedeo, Yirgacheffe, Akesho Afaro',
     process: 'Washed',
-    altitude: '1,900 – 2,100 masl',
+    altitude: '1900- 2400 masl',
     flavorNotes: ['Bergamot', 'Jasmine', 'Lemon Zest'],
     exportReadiness: 'Ready',
     imagePlaceholder: '/images/c3.jpg',
     details: {
-        origin: 'Kochere District, Yirgacheffe',
+        origin: 'Gedeo, Yirgacheffe, Akesho Afaro',
         variety: 'Ethiopian Heirloom',
-        tastingNotes: 'A classic, clean cup with brilliant acidity, intense floral aromatics, and a silky body.',
+        tastingNotes: 'A classic, clean cup with bright and lively acidity, intense floral aromatics, and a silky body.',
         export: 'Available for immediate booking and shipment.'
     }
   },
   {
     id: 'yg1n24',
-    name: 'Yirgacheffe Grade 1 Natural',
-    region: 'Yirgacheffe Aricha',
+    name: 'Natural Yirgacheffe ',
+    region: 'Gedeo, Yirgacheffe, Akesho Afaro',
     process: 'Natural',
-    altitude: '1,850 – 2,050 masl',
+    altitude: '1900- 2400 masl',
     flavorNotes: ['Blueberry', 'Red Wine', 'Dark Chocolate'],
     exportReadiness: 'Ready',
     imagePlaceholder: '/images/c2.jpg',
     details: {
-        origin: 'Aricha Woreda, Yirgacheffe',
+        origin: 'Gedeo, Yirgacheffe, Akesho Afaro',
         variety: 'Ethiopian Heirloom',
         tastingNotes: 'Heavy body, pronounced fruitiness, and a complex, wine-like finish. The essence of the natural process.',
         export: 'Available for immediate booking and shipment.'

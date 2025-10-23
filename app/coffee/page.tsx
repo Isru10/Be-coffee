@@ -8,7 +8,7 @@ export default function OurCoffeePage() {
     <main>
       <PageHeader 
         title="Our Coffee"
-        tagline="Explore our current offering of premium Yirgacheffe, Sidama, and Guji export lots."
+        tagline="Explore our current offering of premium Akesho Afaro, Gedeo export lots."
       />
       
       <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">

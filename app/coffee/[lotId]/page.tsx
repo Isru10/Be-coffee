@@ -6,6 +6,7 @@ import { CoffeeDetailSection } from '@/components/products/CoffeeDetailSection';
 
 // --- Server Side Functions ---
 
+
 export async function generateStaticParams() {
   return COFFEE_LOTS.map((lot) => ({
     lotId: lot.id,

@@ -3,15 +3,15 @@ import { Mail, Phone, MapPin, Linkedin, Facebook, Instagram } from 'lucide-react
 
 export function ContactInfo() {
     const contactDetails = [
-        { icon: Mail, label: 'Email', value: 'isrucrasus10@gmail.com', href: 'mailto:isrucrasus10@gmail.com' },
-        { icon: Phone, label: 'Phone', value: '+251 9XX XXX XXX', href: 'tel:+2519xxxxxxxx' },
+        { icon: Mail, label: 'Email', value: 'yodsbusiness@gmail.com', href: 'mailto:yodsbusiness@gmail.com' },
+        { icon: Phone, label: 'Phone', value: '+251 939825062', href: 'tel:+251945931063' },
         { icon: MapPin, label: 'Office Address', value: 'Addis Ababa, Ethiopia, Bole Sub-City', href: 'https://maps.app.goo.gl/3d15A7NEkhViq4U47' },
     ];
 
     const socialLinks = [
-        { icon: Linkedin, name: 'LinkedIn', href: '#' },
+        { icon: Linkedin, name: 'LinkedIn', href: 'https://www.linkedin.com/in/israel-solomon-2b756b2b8/' },
         { icon: Facebook, name: 'Facebook', href: '#' },
-        { icon: Instagram, name: 'Instagram', href: '#' },
+        { icon: Instagram, name: 'Instagram', href: 'https://www.instagram.com/beyenegemedeexport?utm_source=qr&igsh=dzB6OGExNGoyazY1' },
     ];
     
     return (
